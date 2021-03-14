@@ -47,12 +47,11 @@ func printWorkspaces() {
 	}
 
 	var out bytes.Buffer
-	out.WriteString("\\c")
 	for _, ws := range wss {
 		if ws.Focused {
-			fmt.Fprintf(&out, "\\u0\\fr  %s  ", ws.Name)
+			fmt.Fprintf(&out, "<fc=#ffffff,#005577> %s </fc>", ws.Name)
 		} else {
-			fmt.Fprintf(&out, "\\ur\\fr  %s  ", ws.Name)
+			fmt.Fprintf(&out, "<fc=grey> %s </fc>", ws.Name)
 		}
 	}
 	out.WriteString("")
